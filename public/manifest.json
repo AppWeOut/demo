@@ -1,0 +1,8 @@
+{
+    "name": "WeOut",
+    "short_name": "WeOut",
+    "start_url": "/demo/public",
+    "display": "standalone",
+    "orientation": "portrait-primary"
+  }
+  
