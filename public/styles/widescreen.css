@@ -1,0 +1,7 @@
+.header {
+    flex-direction: row;
+}
+
+.bottom-navbar {
+    display: none;
+}

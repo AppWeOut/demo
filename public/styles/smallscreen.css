@@ -1,0 +1,32 @@
+.header {
+    flex-direction: column;
+    height: inherit;
+}
+
+.bottom-navbar {
+    margin: 20px;
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.bottom-navbar > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    gap: 10px;
+    width: 25%;
+}
+
+.bottom-navbar > a > img {
+    height: 50%;
+}
+
+.bottom-navbar > a > p {
+    text-align: center;
+    font-size: 15px;
+}
