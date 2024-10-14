@@ -4,13 +4,17 @@
 }
 
 .bottom-navbar {
-    margin: 20px;
     position: fixed;
     bottom: 0;
     flex-direction: row;
     display: flex;
     width: 100%;
     align-items: center;
+    background-color: white;
+    padding-top: 5%;
+    border-top-style: solid;
+    border-top-width: 5%;
+    border-top-color: #edf0f2;
 }
 
 .bottom-navbar > a {

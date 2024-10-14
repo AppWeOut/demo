@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../styles/profile.css">
     <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px)" href="../styles/widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="../styles/smallscreen.css">
     <title>Profile</title>
 </head>
 <body>
-    <div id="title-bar" class="grey-background">
-        <h3 id="profile-text" class="title-item">Profile</h3>
-        <div id="search-icon" class="title-item"><a href="">🔍</a></div>
+    <div id="header" class="grey-background header">
+        <div id="header-content">
+            <h3 id="header-text" class="header-item">Profile</h3>
+            <div id="search-icon" class="header-item">
+                <button><img src="../imgs/search-icon.svg"></button>
+            </div>
+        </div>
     </div>
 
     <div id="content" class="grey-background">
         <div id="profile">
             <div id="informations">
-                <div id="pfp"><img id="pfp-image" src="pfp.png" alt="Profile picture"></div>
+                <div id="pfp"><img id="pfp-image" src="../imgs/profile/pfp.png" alt="Profile picture"></div>
                 <div id="text-infos">
                     <h2 id="name" class="text-info">Hannah</h2>
                     <div id="join-date" class="text-info">Joined in 2014</div>
@@ -32,7 +38,7 @@
             <h2>My Bookings</h2>
             <div id="booking-items">
                 <a href="" class="booking-item">
-                    <img class="booking-item-picture" src="booking0.png" alt="Booking item">
+                    <img class="booking-item-picture" src="../imgs/profile/booking0.png" alt="Booking item">
                     <div class="booking-item-infos">
                         <div class="booking-item-name">Brunch at the park</div>
                         <div class="booking-item-order-status">Order placed</div>
@@ -40,7 +46,7 @@
                     </div>
                 </a>
                 <a href="" class="booking-item">
-                    <img class="booking-item-picture" src="booking1.png" alt="Booking item">
+                    <img class="booking-item-picture" src="../imgs/profile/booking1.png" alt="Booking item">
                     <div class="booking-item-infos">
                         <div class="booking-item-name">Bike rental</div>
                         <div class="booking-item-order-status">Order placed</div>
@@ -54,22 +60,22 @@
         </h4>
     </div>
 
-    <div id="nav-bar">
-        <a id="nav-explore" class="nav-item" href="">
-            <div id="nav-search-icon">🔍</div>
-            <div id="nav-search-text">Explore</div>
+    <div class="bottom-navbar">
+        <a>
+            <img src="../imgs/explore.svg">
+            <p>Explore</p>
         </a>
-        <a id="nav-nearby" class="nav-item" href="">
-            <div id="nav-nearby-icon">📍</div>
-            <div id="nav-nearby-text">Nearby</div>
+        <a>
+            <img src="../imgs/nearby.svg">
+            <p>Nearby</p>
         </a>
-        <a id="nav-wishlist" class="nav-item" href="">
-            <div id="nav-wishlist-icon">🩷</div>
-            <div id="nav-wishlist-text">Wishlist</div>
+        <a>
+            <img src="../imgs/wishlist.svg">
+            <p>Wishlist</p>
         </a>
-        <a id="nav-profile" class="nav-item" href="">
-            <div id="nav-profile-icon">🧑</div>
-            <div id="nav-profile-text">Profile</div>
+        <a href="../pages/profile.html">
+            <img src="../imgs/profile.svg">
+            <p>Profile</p>
         </a>
     </div>
 </body>
