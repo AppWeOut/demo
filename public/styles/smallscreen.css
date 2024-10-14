@@ -24,6 +24,8 @@
     height: 50px;
     gap: 10px;
     width: 25%;
+    text-decoration: none;
+    color: black;
 }
 
 .bottom-navbar > a > img {
