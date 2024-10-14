@@ -6,6 +6,15 @@ html {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+:root {
+    --light-grey: #fafafa;
+    --less-light-grey: #edf0f2;
+}
+
+.grey-background {
+    background-color: var(--light-grey);
+}
+
 .header {
     position: fixed;
     top: 0px;
@@ -27,7 +36,7 @@ html {
     display: flex;
     align-items: center;
     height: 25px;
-    background-color: rgb(218, 218, 218);
+    background-color: var(--less-light-grey);
     padding: 10px;
     border-radius: 15px;
     gap: 10px
@@ -47,3 +56,14 @@ html {
     filter: brightness(150%);
 }
 
+.button {
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 2.5% 0;
+}
+
+.blue-button {
+    background-color: #617afa;
+    color: white;
+}

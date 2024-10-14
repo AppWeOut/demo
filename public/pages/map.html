@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/map.css">
     <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/map.css">
     <link rel="stylesheet" media="screen and (min-width: 600px)" href="../styles/widescreen.css">
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="../styles/smallscreen.css">
     <title>Map</title>
 </head>
 <body>
+    <div id="header" class="grey-background header">
+        <div id="header-content">
+            <h3 id="header-text" class="header-item">WeOut</h3>
+            <div id="filter-icon" class="header-item">
+                <button><img src="../imgs/filter.svg"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="grey-background" style="height: 90vh;">
+        <form id="search-box" class="search-box">
+            <img class="search-btn" src="../imgs/search-icon.svg">
+            <input type="search">
+            <img class="filter-btn" src="../imgs/clear.svg">
+        </form>
+
+        <iframe id="map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60009.117440670234!2d-122.42326723851828!3d37.77033247396774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1728938434530!5m2!1sen!2sca"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div id="list-button">
+            <button class="button blue-button" style="width: 25%;">List</button>
+        </div>
+    </div>
+
     <div class="bottom-navbar">
         <a href="../pages/explore.html">
             <img src="../imgs/search-icon.svg">

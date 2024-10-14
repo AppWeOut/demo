@@ -11,10 +11,6 @@ button {
     cursor: pointer;
 }
 
-.grey-background {
-    background-color: #fafafa;
-}
-
 #header {
     width: 100%;
     padding: 0;
@@ -87,19 +83,10 @@ button {
 .edit-button {
     margin: 0 1.5%;
     width: 45%;
-    padding: 2.5% 0;
-    font-weight: bold;
-    border-radius: 10px;
 }
 
 #edit-profile {
     border: none;
-}
-
-#add-photo {
-    border: none;
-    background-color: #617afa;
-    color: white;
 }
 
 #bookings {
