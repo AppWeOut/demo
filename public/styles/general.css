@@ -2,6 +2,11 @@
     margin: 0px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 html {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -16,20 +21,11 @@ html {
 }
 
 .header {
-    position: fixed;
+    
+    position: relative;
     top: 0px;
     display: flex;
     align-items: center;
-    gap: 40px;
-    padding: 50px;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 .search-box {
@@ -39,7 +35,8 @@ html {
     background-color: var(--less-light-grey);
     padding: 10px;
     border-radius: 15px;
-    gap: 10px
+    width: min(90%, 600px);
+    margin: 10px;
 }
 
 .search-box > input {
@@ -54,6 +51,11 @@ html {
     height: 80%;
     z-index: 1;
     filter: brightness(150%);
+}
+
+.header-left { 
+    display: flex;  
+    align-items: center;
 }
 
 .button {

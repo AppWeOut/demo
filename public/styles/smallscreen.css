@@ -3,6 +3,21 @@
     height: inherit;
 }
 
+.header-left {
+    width: 100%;
+}
+
+.top-navbar {
+    display: none;
+}
+
+.logo {
+    background-color: var(--light-grey);
+    width: 100%;
+    text-align: center;
+    padding-block: 30px;
+}
+
 .bottom-navbar {
     position: fixed;
     bottom: 0;
@@ -15,6 +30,7 @@
     border-top-style: solid;
     border-top-width: 5%;
     border-top-color: #edf0f2;
+    padding-bottom: 40px;
 }
 
 .bottom-navbar > a {

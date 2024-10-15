@@ -5,26 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/pages/nearby.css">
-    <link rel="stylesheet" media="screen and (min-width: 600px)" href="../styles/widescreen.css">
-    <link rel="stylesheet" media="screen and (max-width: 600px)" href="../styles/smallscreen.css">
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="../styles/widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="../styles/smallscreen.css">
     <title>Map</title>
 </head>
 <body>
-    <div id="header" class="grey-background header">
-        <div id="header-content">
-            <h3 id="header-text" class="header-item">WeOut</h3>
-            <div id="filter-icon" class="header-item">
-                <button><img src="../imgs/filter.svg"></button>
+    <div class="main-container">
+        <div class="header">
+            <div class="header-left">
+                <a class="logo" href="login.html"><h2>WeOut</h2></a>
+                <div class="top-navbar">
+                    <a href="../pages/explore.html">
+                        <p>Explore</p>
+                    </a>
+                    <a href="../pages/nearby.html">
+                        <p><u>Nearby</u></p>
+                    </a>
+                    <a href="../pages/wishlist.html">
+                        <p>Wishlist</p>
+                    </a>
+                    <a href="../pages/profile.html">
+                        <p>Profile</p>
+                    </a>
+                </div>
             </div>
+            
+            <form class="search-box">
+                <img class="search-btn" src="../imgs/search-icon.svg">
+                <input type="search">
+                <img class="filter-btn" src="../imgs/filter.svg">
+            </form>
         </div>
-    </div>
 
-    <div class="grey-background" style="height: 90vh;">
-        <form id="search-box" class="search-box">
-            <img class="search-btn" src="../imgs/search-icon.svg">
-            <input type="search">
-            <img class="filter-btn" src="../imgs/clear.svg">
-        </form>
 
         <iframe id="map"
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60009.117440670234!2d-122.42326723851828!3d37.77033247396774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1728938434530!5m2!1sen!2sca"
@@ -34,25 +46,26 @@
         <div id="list-button">
             <button class="button blue-button" style="width: 25%;">List</button>
         </div>
-    </div>
 
-    <div class="bottom-navbar">
-        <a href="../pages/explore.html">
-            <img src="../imgs/nav-bar-icons/explore.svg">
-            <p>Explore</p>
-        </a>
-        <a href="../pages/map.html">
-            <img src="../imgs/nav-bar-icons/nearby-selected.svg">
-            <p>Nearby</p>
-        </a>
-        <a href="../pages/wishlist.html">
-            <img src="../imgs/nav-bar-icons/wishlist.svg">
-            <p>Wishlist</p>
-        </a>
-        <a href="../pages/profile.html">
-            <img src="../imgs/nav-bar-icons/profile.svg">
-            <p>Profile</p>
-        </a>
+        <div class="bottom-navbar">
+            <a href="../pages/explore.html">
+                <img src="../imgs/nav-bar-icons/explore.svg">
+                <p>Explore</p>
+            </a>
+            <a href="../pages/map.html">
+                <img src="../imgs/nav-bar-icons/nearby-selected.svg">
+                <p>Nearby</p>
+            </a>
+            <a href="../pages/wishlist.html">
+                <img src="../imgs/nav-bar-icons/wishlist.svg">
+                <p>Wishlist</p>
+            </a>
+            <a href="../pages/profile.html">
+                <img src="../imgs/nav-bar-icons/profile.svg">
+                <p>Profile</p>
+            </a>
+        </div>
     </div>
+    
 </body>
 </html>
