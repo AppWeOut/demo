@@ -18,6 +18,10 @@
     padding-block: 30px;
 }
 
+.search-box {
+    margin: 10px;
+}
+
 .bottom-navbar {
     position: fixed;
     bottom: 0;
