@@ -30,6 +30,7 @@ html {
     top: 0px;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 
@@ -62,15 +63,19 @@ html {
     align-items: center;
 }
 
-.button {
+button {
     border: none;
-    font-weight: bold;
     border-radius: 10px;
-    padding: 2.5% 0;
     cursor: pointer;
+    padding: 7px 30px 7px 30px;
+    font-size: 16px;
 }
 
 .blue-button {
     background-color: #617afa;
     color: white;
+}
+
+.bottom-spacer {
+    height: 150px;
 }
