@@ -46,8 +46,7 @@ a {
 }
 
 #content {
-    margin-top: 15%;
-    height: 100vh;
+    margin-top: 5%;
 }
 
 #informations {
@@ -121,10 +120,12 @@ a {
 }
 
 #log-out {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+#business {
+    text-align: center;
+    padding: 10px;
 }
