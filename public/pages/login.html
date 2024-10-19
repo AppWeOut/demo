@@ -12,11 +12,45 @@
 </head>
 <body class="grey-background">
     <img id="background" src="../imgs/login/background.png" alt="Background image">
+
     <h1 class="text">Welcome to the world's most magical city experiences</h1>
     <h4 class="text">Discover the best activities in your city, from date night ideas to weekend getaways.</h4>
+
     <div id="buttons">
-        <button class="button blue-button buttons">Sign Up</button>
-        <button class="button buttons">Log In</button>
+        <button onclick="connectionOptionOnclick(document.getElementById('sign-up'))" class="button blue-button buttons">Sign Up</button>
+        <button onclick="connectionOptionOnclick(document.getElementById('log-in' ))" class="button buttons">Log In</button>
     </div>
+
+    <div id="connection-options">
+        <form id="sign-up" class="connection-option" style="display: none;" action="explore.html">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+            <button type="submit" class="blue-button">Sign Up</button>
+        </form>
+
+        <form id="log-in"  class="connection-option" style="display: none;" action="explore.html">
+            <label for="id">Username or Email: </label>
+            <input type="text" id="id" name="id" placeholder="Username / Email" required>
+
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+
+    <script>
+        function connectionOptionOnclick(connectionOption) {
+            document.getElementById("buttons").style.display = "none";
+            connectionOption.style.display = "grid";
+        }
+    </script>
 </body>
 </html>
