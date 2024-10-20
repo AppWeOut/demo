@@ -128,27 +128,10 @@
             document.getElementById("activity-informations").getElementsByTagName("h4")[0].textContent = title;
 
 
-            var ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, total = 0;
+            var scores = Array(5).fill(0), total = 0;
             for (const review of reviews) {
-                switch (review) {
-                    case 1:
-                        ones++;
-                        break;
-                    case 2:
-                        twos++;
-                        break;
-                    case 3:
-                        threes++;
-                        break;
-                    case 4:
-                        fours++;
-                        break;
-                    case 5:
-                        fives++;
-                        break;
-                    default:
-                        break;
-                } total += review;
+                scores[review - 1]++;
+                total += review;
             }
             const numReviews = reviews.length, score = total / numReviews;
             const numStars = Math.floor(score);
@@ -157,28 +140,9 @@
             document.getElementById("stars").innerText = "★".repeat(numStars) + "☆".repeat(5 - numStars);
             document.getElementById("reviews").innerText = numReviews + " review" + (numReviews === 1 ? "" : "s");
 
-            var i = 5;
+            var i = 4;
             for (const score_rating of document.getElementsByClassName("score-rating")) {
-                var reviews = 0;
-                switch (i) {
-                    case 1:
-                        reviews = ones;
-                        break;
-                    case 2:
-                        reviews = twos;
-                        break;
-                    case 3:
-                        reviews = threes;
-                        break;
-                    case 4:
-                        reviews = fours;
-                        break;
-                    case 5:
-                        reviews = fives;
-                        break;
-                    default:
-                        break;
-                }
+                var reviews = scores[i];
 
                 const percentage = reviews / numReviews * 100, percentageStr = percentage.toFixed(0) + "%";
                 score_rating.getElementsByClassName("score-rating-percentage")[0].innerText = percentageStr;
