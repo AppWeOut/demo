@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#fafafa"/>
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/pages/explore-activity.css">
+    <link rel="stylesheet" media="screen and (min-width: 801px)" href="../styles/widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="../styles/smallscreen.css">
+    <title>Explore</title>
+</head>
+<body>
+    <div class="grey-background">
+        <div id="header" class="header">
+            <button id="back-arrow" onclick="window.location.href = 'explore.html'">
+                <img src="../imgs/arrow.svg" alt="Back">
+            </button>
+            <div>
+                <a class="logo" href="login.html"><h2>WeOut</h2></a>
+            </div>
+        </div>
+
+        <div id="search">
+            <form class="search-box">
+                <img class="search-btn" src="../imgs/search-icon.svg">
+                <input type="search" placeholder="Try  &quot;Yoga&quot; or &quot;Sushi Making&quot;">
+            </form>
+        </div>
+
+        <div id="content">
+            <div id="presentation">
+                <div id="activity">
+                    <img src="../imgs/activity/act1.png">
+                    <div id="activity-function">
+                        <div id="activity-informations">
+                            <h4>Paint and Sip at SFMOMA</h4>
+                            <p>By Art of Craft</p>
+                        </div>
+                        <button class="blue-button">Book</button>
+                    </div>
+                </div>
+
+                <div id="ratings">
+                    <div id="scores">
+                        <h1 id="score">4.5</h1>
+                        <div id="stars">★★★★☆</div>
+                        <h4 id="reviews">2 reviews</h4>
+                    </div>
+
+                    <div id="score-ratings">
+                        <div class="score-rating">
+                            <h4 class="score-rating-score">5</h4>
+                            <div class="score-rating-bar">
+                                <div class="score-rating-bar-filled" style="width: 50%;"></div>
+                            </div>
+                            <h4 class="score-rating-percentage">50%</h4>
+                        </div>
+                        <div class="score-rating">
+                            <h4 class="score-rating-score">4</h4>
+                            <div class="score-rating-bar">
+                                <div class="score-rating-bar-filled" style="width: 50%;"></div>
+                            </div>
+                            <h4 class="score-rating-percentage">50%</h4>
+                        </div>
+                        <div class="score-rating">
+                            <h4 class="score-rating-score">3</h4>
+                            <div class="score-rating-bar">
+                                <div class="score-rating-bar-filled" style="width: 0%;"></div>
+                            </div>
+                            <h4 class="score-rating-percentage">0%</h4>
+                        </div>
+                        <div class="score-rating">
+                            <h4 class="score-rating-score">2</h4>
+                            <div class="score-rating-bar">
+                                <div class="score-rating-bar-filled" style="width: 0%;"></div>
+                            </div>
+                            <h4 class="score-rating-percentage">0%</h4>
+                        </div>
+                        <div class="score-rating">
+                            <h4 class="score-rating-score">1</h4>
+                            <div class="score-rating-bar">
+                                <div class="score-rating-bar-filled" style="width: 0%;"></div>
+                            </div>
+                            <h4 class="score-rating-percentage">0%</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pictures">
+                <img src="../imgs/activity/leather0.png" alt="Activity picture" style="width: 47.5%;">
+                <img src="../imgs/activity/leather1.png" alt="Activity picture" style="width: 23.75%;">
+                <img src="../imgs/activity/leather2.png" alt="Activity picture" style="width: 23.75%;">
+            </div>
+
+            <div id="description">
+                <h2>Activity Description: </h2>
+                <p>Learn to make your own leather wallet from scratch.</p>
+            </div>
+
+            <div id="pricing">
+                <h3>From 49$ per person</h3>
+                <h4>1 hour · In-person</h4>
+            </div>
+            
+            <div id="buttons">
+                <button class="button round-button"><img src="../imgs/save.svg" alt="Save"></button>
+                <button class="button round-button"><img src="../imgs/share.svg" alt="Share"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const id = new URLSearchParams(window.location.search).get("id");
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            if (id === "paint_and_sip_SFMOMA")
+                processData("../imgs/activity/act1.png", "Paint and Sip at SFMOMA", [5, 4]);
+            else if (id === "hiking_Marin_Headlands")
+                processData("../imgs/activity/act2.png", "Hiking the Marin Headlands", [2]);
+            else if (id === "immersive_Van_Gogh_exhibit")
+                processData("../imgs/activity/act3.png", "Immersive Van Gogh Exhibit", [3, 1, 1]);
+        });
+        
+        function processData(image, title, reviews) {
+            document.getElementById("activity").getElementsByTagName("img")[0].src = image;
+            document.getElementById("activity-informations").getElementsByTagName("h4")[0].textContent = title;
+
+
+            var ones = 0, twos = 0, threes = 0, fours = 0, fives = 0, total = 0;
+            for (const review of reviews) {
+                switch (review) {
+                    case 1:
+                        ones++;
+                        break;
+                    case 2:
+                        twos++;
+                        break;
+                    case 3:
+                        threes++;
+                        break;
+                    case 4:
+                        fours++;
+                        break;
+                    case 5:
+                        fives++;
+                        break;
+                    default:
+                        break;
+                } total += review;
+            }
+            const numReviews = reviews.length, score = total / numReviews;
+            const numStars = Math.floor(score);
+            
+            document.getElementById("score").innerText = score.toFixed(1);
+            document.getElementById("stars").innerText = "★".repeat(numStars) + "☆".repeat(5 - numStars);
+            document.getElementById("reviews").innerText = numReviews + " review" + (numReviews === 1 ? "" : "s");
+
+            var i = 5;
+            for (const score_rating of document.getElementsByClassName("score-rating")) {
+                var reviews = 0;
+                switch (i) {
+                    case 1:
+                        reviews = ones;
+                        break;
+                    case 2:
+                        reviews = twos;
+                        break;
+                    case 3:
+                        reviews = threes;
+                        break;
+                    case 4:
+                        reviews = fours;
+                        break;
+                    case 5:
+                        reviews = fives;
+                        break;
+                    default:
+                        break;
+                }
+
+                const percentage = reviews / numReviews * 100, percentageStr = percentage.toFixed(0) + "%";
+                score_rating.getElementsByClassName("score-rating-percentage")[0].innerText = percentageStr;
+                score_rating.getElementsByClassName("score-rating-bar-filled")[0].style.width = percentageStr;
+
+                i--;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -18,6 +18,8 @@ html {
 :root {
     --light-grey: #fafafa;
     --less-light-grey: #edf0f2;
+    --purplish-blue: #617afa;
+    --grey: #d6d6de;
 }
 
 .grey-background {
@@ -32,7 +34,6 @@ html {
     align-items: center;
     margin-bottom: 20px;
 }
-
 
 .search-box {
     display: flex;
@@ -72,8 +73,13 @@ button {
 }
 
 .blue-button {
-    background-color: #617afa;
+    background-color: var(--purplish-blue);
     color: white;
+}
+
+.round-button {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .bottom-spacer {
