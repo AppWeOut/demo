@@ -197,11 +197,18 @@ h4 {
     padding-bottom: 5%;
 }
 
-#buttons > button {
+.text-button, .text-button > button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.text-button {
+    gap: 10px;
+}
+
+.text-button > button {
     width: 10%;
 }
 

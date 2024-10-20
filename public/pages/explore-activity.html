@@ -98,16 +98,33 @@
             </div>
             
             <div id="buttons">
-                <button class="button round-button"><img src="../imgs/save.svg" alt="Save"></button>
-                <button class="button round-button"><img src="../imgs/share.svg" alt="Share"></button>
+                <div class="text-button" id="save-button">
+                    <button class="button round-button"><img src="../imgs/save.svg" alt="Save"></button>
+                    <h4>Save</h4>
+                </div>
+                <div class="text-button">
+                    <button class="button round-button"><img src="../imgs/share.svg" alt="Share"></button>
+                    <h4>Share</h4>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        const id = new URLSearchParams(window.location.search).get("id");
+        const parameters = new URLSearchParams(window.location.search);
         
         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("back-arrow").onclick = function() {
+                window.location.href = parameters.get("source") + ".html";
+            };
+            
+            if (parameters.get("saved") === "true") {
+                const saveDiv = document.getElementById("save-button");
+                saveDiv.getElementsByTagName("button")[0].getElementsByTagName("img")[0].src = "../imgs/save-selected.svg";
+                saveDiv.getElementsByTagName("h4")[0].innerText = "Remove";
+            }
+            
+            const id = parameters.get("id");
             if (id === "paint_and_sip_SFMOMA")
                 processData("../imgs/activity/act1.png", "Paint and Sip at SFMOMA", [5, 4]);
             else if (id === "hiking_Marin_Headlands")
