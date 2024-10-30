@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/pages/explore.css">
     <link rel="stylesheet" media="screen and (min-width: 801px)" href="../styles/widescreen.css">
     <link rel="stylesheet" media="screen and (max-width: 800px)" href="../styles/smallscreen.css">
+    <script src="../floating-header.js"></script>
     <title>Explore</title>
 </head>
 <body>
@@ -30,7 +31,9 @@
                     </a>
                 </div>
             </div>
-            
+        </div>
+
+        <div id="search">
             <form class="search-box">
                 <img class="search-btn" src="../imgs/search-icon.svg">
                 <input type="search" placeholder="Try  &quot;Yoga&quot; or &quot;Sushi Making&quot;">
@@ -47,7 +50,7 @@
                         <h4>Paint and Sip at SFMOMA</h4>
                         <p>4.9 (1200) • Art workshop • &25</p>
                     </div>
-                    <button class="blue-button">Book</button>
+                    <button class="blue-button book-button">Book</button>
                 </div>
             </a>
             <a href="explore-activity.html?id=hiking_Marin_Headlands&saved=false&source=explore" class="activity">
@@ -57,7 +60,7 @@
                         <h4>Hiking the Marin Headlands</h4>
                         <p>5.0 (2,000) · Hike · Free</p>
                     </div>
-                    <button class="blue-button">Book</button>
+                    <button class="blue-button book-button">Book</button>
                 </div>
             </a>
             <a href="explore-activity.html?id=immersive_Van_Gogh_exhibit&saved=false&source=explore" class="activity">
@@ -67,7 +70,7 @@
                         <h4>Immersive Van Gogh Exhibit</h4>
                         <p>4.8 (3,000) · Art show · $35</p>
                     </div>
-                    <button class="blue-button">Book</button>
+                    <button class="blue-button book-button">Book</button>
                 </div>
             </a>
         </div>
@@ -94,7 +97,25 @@
     </div>
 
     <script>
+        for (const button of document.getElementsByClassName("book-button"))
+            button.addEventListener("click", bookButtonClick);
+    
+        function bookButtonClick(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        
+            const calendar = document.createElement("input");
+            calendar.id = "calendar";
+            calendar.type = "date";
+            calendar.style.display = "none";
 
+            calendar.addEventListener("change", function() {
+                calendar.remove();
+            });
+
+            document.body.appendChild(calendar);
+            calendar.showPicker();
+        }
     </script>
 </body>
 </html>

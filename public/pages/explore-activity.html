@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/pages/explore-activity.css">
     <link rel="stylesheet" media="screen and (min-width: 801px)" href="../styles/widescreen.css">
     <link rel="stylesheet" media="screen and (max-width: 800px)" href="../styles/smallscreen.css">
+    <script src="../floating-header.js"></script>
     <title>Explore</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
                             <h4>Paint and Sip at SFMOMA</h4>
                             <p>By Art of Craft</p>
                         </div>
-                        <button class="blue-button">Book</button>
+                        <button class="blue-button book-button">Book</button>
                     </div>
                 </div>
 
@@ -160,6 +161,27 @@
 
                 i--;
             }
+        }
+    </script>
+    <script>
+        for (const button of document.getElementsByClassName("book-button"))
+            button.addEventListener("click", bookButtonClick);
+    
+        function bookButtonClick(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        
+            const calendar = document.createElement("input");
+            calendar.id = "calendar";
+            calendar.type = "date";
+            calendar.style.display = "none";
+
+            calendar.addEventListener("change", function() {
+                calendar.remove();
+            });
+
+            document.body.appendChild(calendar);
+            calendar.showPicker();
         }
     </script>
 </body>
